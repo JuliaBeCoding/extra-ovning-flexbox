@@ -1,0 +1,99 @@
+body {
+	background: url(12_col.gif) center top repeat-y;
+	background-size: 90%;
+}
+
+[class*="section"] {
+	border: 1px solid #333;
+	min-height: 100px;
+}
+
+#container {
+	width: 89.5%;
+	margin: 0 auto;
+	display: grid;
+
+	grid-template-columns: repeat(4, 1fr);
+
+	column-gap: 2%;
+	row-gap: 20px;
+}
+
+
+.section-1,
+.section-2,
+.section-3,
+.section-4 {
+  grid-column: 1 / 5;
+}
+
+.section-2,
+.section-3 {
+  display: grid;
+  column-gap: 25px;
+  border: none;
+}
+
+.section-2 {
+  grid-template-columns: 15% 1fr 15%;
+}
+
+.section-3 {
+  grid-template-columns: 1fr 23.5%;
+}
+
+.section-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 25px;
+  padding: 5px
+}
+
+
+
+
+/* SMALL DESKTOP */
+
+@media screen and (max-width: 1200px) {
+  #container {
+    width: 960px;
+  }
+  .section-2 {
+    grid-template-columns: 25% 1fr 25%;
+  }
+}
+
+
+/* TABLET - KLAR */
+
+@media screen and (max-width: 960px) {
+  #container {
+    width: 768px;
+  }
+  [class*="section"] {
+    row-gap: 15px;
+  }
+
+  .section-2 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .section-3, 
+  .section-4 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+/* MOBILE - KLAR */
+
+@media screen and (max-width: 768px) {
+  #container {
+    width: 100%;
+  }
+  [class*="section"] {
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+  }
+}
+
